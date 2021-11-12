@@ -1,12 +1,12 @@
 import { Router } from 'express';
-import { LeaderboardController } from '../Controllers/LeaderboardController';
+import { ClubMemberController } from '../Controllers/ClubMemberController';
 // The file is responsible to process the api requests and call the required middleware, validator and controller in a centralized place
 
 //@Route: /auth
 //@AUTH not required
 //@FUNCTIONS all auth related work
 
-class LeaderboardRouter {
+class ClubMemberRoutes {
   public router: Router;
   constructor() {
     this.router = Router();
@@ -17,9 +17,9 @@ class LeaderboardRouter {
   }
   getRoutes(): void {
     // add all get routes here
-    this.router.get('/rankings', LeaderboardController.getLeaderboard);
   }
   postRoutes(): void {
+    this.router.post('/new/member', ClubMemberController.addNewMember);
     // add all post routes here
   }
   putRoutes(): void {
@@ -30,4 +30,4 @@ class LeaderboardRouter {
     // add all get routes here
   }
 }
-export default new LeaderboardRouter().router;
+export default new ClubMemberRoutes().router;
