@@ -1,5 +1,5 @@
 export const DevEnvironment = {
   db_url:
-    'mongodb+srv://samy:31172808s@c@cluster0.mmify.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+    'mongodb+srv://admin123:ADMIN1234@cluster0.tfxzy.mongodb.net/codefoleaderboard?retryWrites=true&w=majority',
   jwt_secret: ''
 };

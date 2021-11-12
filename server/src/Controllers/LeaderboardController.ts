@@ -14,11 +14,8 @@ export class LeaderboardController {
       let query: string = ApiConstants.getMemberRatings;
       // add all handles separated by a ; to the above list. Note that only 10,000 handles are supported
       mems.forEach((member) => (query += member.handle + ';'));
-      query.substring(0, query.length - 1);
-      const response = LeaderboardAPI.getMemberRatingsApiCall(query);
-      console.log(response);
+      const response = await LeaderboardAPI.getMemberRatingsApiCall(query);
       res.json(response);
-      // return leaderboard
     } catch (error) {
       next(error);
     }
