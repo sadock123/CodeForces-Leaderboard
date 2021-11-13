@@ -6,6 +6,8 @@ import * as bodyParser from 'body-parser';
 import * as mongoose from 'mongoose';
 //server file imports
 import { getEnvironmentVariables } from './environments/env';
+import LeaderboardRoutes from './Routes/LeaderboardRoutes';
+import ClubMemberRoutes from './Routes/ClubMemberRoutes';
 
 export class Server {
   public app: express.Application = express();
@@ -31,6 +33,9 @@ export class Server {
   }
 
   setRoutes() {
+    this.app.use('/api/leaderboard', LeaderboardRoutes);
+    this.app.use('/api/club/member', ClubMemberRoutes);
+
     // all the server api routes go here
   }
 

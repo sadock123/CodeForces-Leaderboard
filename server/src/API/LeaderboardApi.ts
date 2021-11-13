@@ -1,11 +1,14 @@
-import fetch from 'node-fetch';
+import axios from 'axios';
 
 export class LeaderboardAPI {
   static async getMemberRatingsApiCall(query: string): Promise<any> {
     try {
-      const result = await fetch(query);
-      const data: any = await result.json();
-      if (result.status === 200) {
+      const result = await axios
+        .get(query.substring(0, query.length - 1))
+        .then((resp) => resp.data);
+      console.log(result);
+      const data: any = await result;
+      if (result.status === 'OK') {
         return {
           status: true,
           code: 200,
