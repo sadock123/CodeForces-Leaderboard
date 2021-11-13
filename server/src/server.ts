@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import * as express from 'express';
 import { Response } from 'express';
+import * as cors from 'cors';
 import * as bodyParser from 'body-parser';
 import * as mongoose from 'mongoose';
 //server file imports
@@ -23,6 +24,7 @@ export class Server {
     // boilerplate configuration of the packages
     this.connectMongoDb();
     this.configureBodyParser();
+    this.app.use(cors());
     console.log('Configurations have been successfully setup');
   }
 

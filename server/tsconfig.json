@@ -6,7 +6,7 @@
     "strict": true,
     "strictPropertyInitialization": false,
     "declaration": true,
-    "downlevelIteration": true
+    "downlevelIteration": true,
   },
   "include": ["src/**/*"]
 }
