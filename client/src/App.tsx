@@ -11,9 +11,11 @@ function App() {
   return (
     <>
       <Header/>
+      <br/>
       <BrowserRouter>
         <Router />
       </BrowserRouter>
+      <br/>
       <Footer/>
     </>
   );
